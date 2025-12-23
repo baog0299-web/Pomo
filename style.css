@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk",sans-serif;
+}
+.bg-image{
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('lofi-girl-synthwave-3840x2160-14917.jpg');
+}
+.header{
+    display:flex;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px 40px;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.header-controls{
+    display: flex;
+    gap: 20px;
+}
+.header-btn{
+    background: rgba(255, 255, 255, 0.15); /* Nền kính mờ */
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.header-btn:hover{
+    background-color: #fff;
+    color:#000000;
+    transition: all 0.3s ease;
+}
+.container{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0  20px;
+    margin-top: 100px;
+
+}
+.button-section{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 120px;
+    border: 1px solid #fff;
+    border-radius: 500px;
+    font-family: "Space Grotesk",sans-serif;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+}
+.btn:hover, .btn:active{
+    background-color: #fff;
+    transition: all 0.3s ease;
+    color: #000000;
+
+}
+.pomodoro-timer{
+    font-size: 120px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 0.85;
+}
+.control-section{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.reset-btn, .setting-btn{
+    background-color: transparent;
+    border: none;
+    /* padding: 16px; */
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+}
+.focus-area{
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    color: #Fff;
+    font-size: 24px;
+    font-family: "Space Grotesk",sans-serif;
+    /* margin: 20px 0; */
+    flex-wrap: wrap;
+}
+.focus-area::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.setting-overlay{
+    /* display: none; */
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+/* Sử dụng opacity vì display: none không cho phép sử dụng transition */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.setting-overlay.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.setting-content{
+    background-color: #fff;
+    width: 90%;
+    max-width: 480px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: #000000;
+    
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+}
+.setting-overlay.active .setting-content{
+    transform: scale(1);
+}
+.setting-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    font-size: 20px;
+}
+.setting-header .close-btn{
+    cursor: pointer;
+}
+.setting-body{
+    padding: 0 20px 20px 20px;
+}
+.time-setting{
+    display: flex;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+.time-input{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.time-input input{
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+.setting-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.setting-row input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFEFEF;
+    border: none; 
+    padding: 10px;
+}
+@media screen and (max-width:1024px){
+    .pomodoro-timer{
+        font-size:100px;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    .header {
+        padding: 20px; 
+        margin-bottom: 30px;
+    }
+    .header h1{
+        font-size: 1.5rem;
+    }
+    .header-btn{
+        width: 35px;
+        height: 35px;
+        font-size:0.9rem;
+    }
+    .container{
+        margin-top:80px;
+    }
+    .pomodoro-timer {
+        font-size: 70px;
+    }
+    .button-section{
+        gap: 10px;
+    }
+    .btn{
+        width: auto;
+        min-width: 90px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .control-section{
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .header{
+        margin-bottom: 20px;
+    }
+    .container{
+        margin-top:20px;
+        padding: 20px;
+    }
+    .pomodoro-timer{
+        font-size: 18vw;
+    }
+    .btn{
+        font: 0.8rem;
+        padding: 8px 12px;
+        min-width: 80px;
+    }
+}
+.music-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+    opacity: 0.8;
+    
+}
+
+/* Chữ tên bài hát */
+.song-name {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* === HIỆU ỨNG SÓNG NHẠC (EQUALIZER) (AI) */
+.wave-container {
+    display: flex;
+    align-items: flex-end; /* Căn đáy để thanh mọc lên trên */
+    height: 15px;
+    gap: 3px;
+}
+
+.bar {
+    width: 4px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    
+    /* Mặc định chưa chạy thì thấp xuống */
+    height: 3px; 
+    transition: all 0.2s ease;
+}
+
+/* Khi có class 'playing' thì mới bắt đầu nhún nhảy */
+.music-status.playing .bar {
+    animation: sound 1s infinite ease-in-out;
+}
+
+/* Chỉnh độ trễ (delay) để 3 thanh nhảy so le nhau cho tự nhiên */
+.music-status.playing .bar:nth-child(1) { animation-delay: 0.0s; }
+.music-status.playing .bar:nth-child(2) { animation-delay: 0.2s; }
+.music-status.playing .bar:nth-child(3) { animation-delay: 0.4s; }
+
+/* Định nghĩa chuyển động lên xuống */
+@keyframes sound {
+    0% { height: 3px; }
+    50% { height: 15px; } /* Cao nhất */
+    100% { height: 3px; }
+}

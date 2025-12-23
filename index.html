@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b4d5a343c6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="header">
+        <h1>Pomodoro Timer</h1>
+        <div class="header-controls">
+            <button class="header-btn" id="music-btn" title="Bật/Tắt Nhạc">
+            <i class="fas fa-music"></i>
+            </button>
+            <button class="header-btn" id="bg-change-btn" title="Đổi Hình Nền">
+                <i class="fas fa-image"></i>
+            </button>
+        </div>
+    </div>
+    <audio id="bg-music" loop>
+    </audio>
+    <div class="container">
+        <div class="button-section">
+            <button class="btn" id="btn-pomodoro">Pomdoro</button>
+            <button class="btn" id="btn-short"> Short Break</button>
+            <button class="btn" id="btn-long"> Long Break</button>
+        </div>
+        <div class="area">
+            <textarea class="focus-area" name="" id="" placeholder="click to add your title"></textarea>
+        </div>
+        <div class="pomodoro-timer" id="timer">
+            25:00
+        </div>
+        <div class="control-section">
+            <button class="start-btn btn" id="start">Start</button>
+            <button class="reset-btn btn" id="reset"><i class="fas fa-arrow-rotate-left"></i></button>
+            <button class="setting-btn btn" id="setting" onclick="openOverlay()"><i class="fas fa-cog"></i></button>
+    </div>
+    <div class="setting-overlay">
+        <div class="setting-content">
+            <div class="setting-header">
+                <h3><i class="fa-regular fa-clock"></i>Settings</h3>
+                <span class="close-btn" onclick="closeOverlay()">&times;</span>
+            </div>
+            <div class="setting-body">
+                <div class="time-setting">
+                        <div class="time-input">
+                            <label for="pomodoro-timer">Pomodoro</label>
+                            <input type="number" id="setting-pomodoro" value="25">
+                        </div>
+                        <div class="time-input">
+                            <label for="short-timer">Short Break</label>
+                            <input type="number" id="setting-short" value="5">
+                        </div>
+                        <div class="time-input">
+                            <label for="long-timer">Long Break</label>
+                            <input type="number" id="setting-long" value="15">
+                        </div>
+                </div>
+                <div class="setting-row">
+                    <h3>Auto Start Breaks</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-start-breaks">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-row">
+                    <h3>Auto Start Pomodoro</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-start-pomodoro">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-row">
+                    <h3>Long Break Interval</h3>
+                    <label class="time-input">
+                        <input type="number" id="long-breaks-interval" value="4">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="music-status" id="music-status">
+    <div class="wave-container">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <span class="song-name" id="song-name">Music Paused</span>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
