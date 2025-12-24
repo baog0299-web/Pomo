@@ -210,7 +210,18 @@
 }
 @media screen and (max-width:1024px){
     .pomodoro-timer{
-        font-size:100px;
+        font-size:240px;
+    }
+    .btn{
+        width: 160px;
+        padding: 20px 20px;
+        font-size: 1.6rem;
+    }
+    .header-btn{
+        width: 160px;
+        height: 40px;
+        padding: 2;
+        font-size: 1.6rem;
     }
 }
 @media screen and (max-width: 768px) {
@@ -248,7 +259,8 @@
 }
 @media screen and (max-width: 400px) {
     .header{
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     .container{
         margin-top:20px;

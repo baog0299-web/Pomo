@@ -75,7 +75,7 @@ const resetTimer = () => {
 }
 function switchMode(mode){
     currentMode = mode;
-    document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active')); // SỬA: class của bạn là .btn
+    document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(`btn-${mode}`).classList.add('active');
 
     resetTimer();
